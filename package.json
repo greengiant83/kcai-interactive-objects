@@ -1,0 +1,25 @@
+{
+  "name": "kcai-interactive-objects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "serialport": "^6.0.4",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greengiant83/kcai-interactive-objects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greengiant83/kcai-interactive-objects/issues"
+  },
+  "homepage": "https://github.com/greengiant83/kcai-interactive-objects#readme"
+}
