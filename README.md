@@ -2,9 +2,9 @@
 
 In a terminal run this command
 
-``git clone https://github.com/greengiant83/kcai-interactive-objects.git``
-``cd kcai-interactive-objects``
-``npm install``
+>`git clone https://github.com/greengiant83/kcai-interactive-objects.git`
+>`cd kcai-interactive-objects`
+>`npm install`
 
 copy *config.example.js* and name it *config.js*
 
