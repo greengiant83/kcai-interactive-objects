@@ -1,6 +1,6 @@
 # kcai-interactive-objects
 
-In a terminal run this command
+In a terminal run these commands
 
 * `git clone https://github.com/greengiant83/kcai-interactive-objects.git`
 * `cd kcai-interactive-objects`
