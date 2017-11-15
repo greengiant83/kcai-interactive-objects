@@ -3,30 +3,14 @@
 	</head>
 	<body>
 		<h1>Interactive Objects and Sockets!</h1>
-
-		<button onclick="turnOn()">Turn On</button>
-		<button onclick="turnOff()">Turn Off</button>
-
-		<script src="/socket.io/socket.io.js"></script>
-		<script>
-		  var socket = io();
-		  socket.on('news', function (data) {
-		    console.log(data);
-		    
-		  });
-
-		  function turnOn()
-		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
-		  }
-
-		  function turnOff()
-		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
-		  }
-		</script>
+		<ul>
+			<li><b><a href="matt/index.html">matt</a></b></li>
+			<li><a href="mol/index.html">mol</a></li>
+			<li><a href="troy/index.html">troy</a></li>
+			<li><a href="zane/index.html">zane</a></li>
+			<li><a href="steven/index.html">steven</a></li>
+			<li><a href="kristin/index.html">kristin</a></li>
+		</ul>
 	</body>
 </html>
 
