@@ -10,14 +10,6 @@ var port = new SerialPort("COM6", {
 
 server.listen(8000);
 
-/*app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
-
-app.get('/stream.html', function (req, res) {
-  res.sendfile(__dirname + '/stream.html');
-});*/
-
 app.use(express.static('public'))
 
 io.on('connection', function (socket) {
