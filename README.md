@@ -1,11 +1,14 @@
 # kcai-interactive-objects
 
-git clone https://github.com/greengiant83/kcai-interactive-objects.git
-copy config.example.js and name it config.js
+In a terminal run this command
+`git clone https://github.com/greengiant83/kcai-interactive-objects.git`
 
-open the config.js and replace <INSERT SERIAL PORT NAME HERE> with the path to your serial port
+copy *config.example.js* and name it *config.js*
+
+open the *config.js* and replace *<INSERT SERIAL PORT NAME HERE>* with the path to your serial port path
+
 for windows users it will probably look like:
-COM6
+`COM6`
 
 for mac users it will probably look like
-/dev/cu.usbmodem1421
+`/dev/cu.usbmodem1421`
