@@ -8,8 +8,6 @@ var port = new SerialPort(config.serialPort, {
 	baudRate: 9600
 });
 
-console.log("config", config.serialPort);
-
 server.listen(8000);
 
 app.use(express.static('public'))
