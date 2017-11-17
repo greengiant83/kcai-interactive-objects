@@ -1,0 +1,25 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Kristen images</h1>
+
+		<img onclick="onImageClick()" src="romanmosaicface.jpg"/>
+		<img onclick="ImageClick2()" src="idontevenknow.jpg"/>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io();
+		  socket.on('news', function (data) {
+		    console.log(data);
+
+		  });
+			function onImageClick() {
+				console.log("Eheu!");
+			}
+			function ImageClick2() {
+				console.log("Help me");
+			}
+		</script>
+	</body>
+</html>
