@@ -4,8 +4,11 @@
 	<body>
 		<h1>Mol likes DNA!</h1>
 
-		<button onclick="turnOn()">Turn On</button>
-		<button onclick="turnOff()">Turn Off</button>
+		<a href="/mol/images.html">look at mol images</a><br/>
+		<a href="/mol/experiment.html">a frames experiment</a>
+
+
+		
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
@@ -15,17 +18,8 @@
 		    
 		  });
 
-		  function turnOn()
-		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
-		  }
-
-		  function turnOff()
-		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
-		  }
+		  
+		  
 		</script>
 	</body>
 </html>
