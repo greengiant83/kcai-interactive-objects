@@ -3,9 +3,8 @@
 	</head>
 	<body>
 		<h1>The Steve's Images</h1>
-
-		<button onclick="turnOn()">Turn On</button>
-		<button onclick="turnOff()">Turn Off</button>
+    <img  onclick="onImageClick()" src="Alien.jpg" />
+    <img onclick="onImageClick2()" src="Alien2.jpg"  />
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
@@ -14,18 +13,14 @@
 		    console.log(data);
 
 		  });
-
-		  function turnOn()
-		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
-		  }
-
-		  function turnOff()
-		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
-		  }
+      function onImageClick()
+      {
+        console.log("Spoopy!!");
+      }
+      function onImageClick2()
+      {
+        console.log("HOLY MOTHER OF");
+      }
 		</script>
 	</body>
 </html>
