@@ -4,8 +4,8 @@
 	<body>
 		<h1>Mol images!</h1>
 
-		<button onclick="turnOn()">Turn On</button>
-		<button onclick="turnOff()">Turn Off</button>
+		<img onClick="onImageClick()" src="mol.png" />
+		<img onClick="onOtherImageClick()" src="mol2.png" />
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
@@ -15,17 +15,15 @@
 		    
 		  });
 
-		  function turnOn()
+		  function onImageClick()
 		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
+		  	console.log("MOL!")
 		  }
-
-		  function turnOff()
+		  function onOtherImageClick()
 		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
+		  	console.log("ANOTHER MOL!")
 		  }
+		  
 		</script>
 	</body>
 </html>
