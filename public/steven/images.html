@@ -1,0 +1,26 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>The Steve's Images</h1>
+    <img  onclick="onImageClick()" src="Alien.jpg" />
+    <img onclick="onImageClick2()" src="Alien2.jpg"  />
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io();
+		  socket.on('news', function (data) {
+		    console.log(data);
+
+		  });
+      function onImageClick()
+      {
+        console.log("Spoopy!!");
+      }
+      function onImageClick2()
+      {
+        console.log("HOLY MOTHER OF");
+      }
+		</script>
+	</body>
+</html>

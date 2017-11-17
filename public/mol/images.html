@@ -1,0 +1,30 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Mol images!</h1>
+
+		<img onClick="onImageClick()" src="mol.png" />
+		<img onClick="onOtherImageClick()" src="mol2.png" />
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io();
+		  socket.on('news', function (data) {
+		    console.log(data);
+		    
+		  });
+
+		  function onImageClick()
+		  {
+		  	console.log("MOL!")
+		  }
+		  function onOtherImageClick()
+		  {
+		  	console.log("ANOTHER MOL!")
+		  }
+		  
+		</script>
+	</body>
+</html>
+
