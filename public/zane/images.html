@@ -1,0 +1,32 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Zane's Images</h1>
+
+		<img onclick= "onImageClick()" src="smile.jpg"/>
+		<img onclick= "onImageClick2()" src="black.jpeg"/>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io();
+		  socket.on('news', function (data) {
+		    console.log(data);
+		    
+		  });
+
+		  function onImageClick()
+		  {
+		  	console.log("hello...")
+		 
+		  }
+		  function onImageClick2()
+		  {
+		  	console.log("bye...")
+		 
+		  }
+
+		
+		</script>
+	</body>
+</html>
