@@ -4,10 +4,8 @@
 	<body>
 		<h1>Kristen images</h1>
 
-		<img src="romanmosaicface.jpg"/>
-
-		<button onclick="turnOn()">Turn On</button>
-		<button onclick="turnOff()">Turn Off</button>
+		<img onclick="onImageClick()" src="romanmosaicface.jpg"/>
+		<img onclick="ImageClick2()" src="idontevenknow.jpg"/>
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
@@ -16,18 +14,12 @@
 		    console.log(data);
 
 		  });
-
-		  function turnOn()
-		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
-		  }
-
-		  function turnOff()
-		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
-		  }
+			function onImageClick() {
+				console.log("Ouch!");
+			}
+			function ImageClick2() {
+				console.log("Help me");
+			}
 		</script>
 	</body>
 </html>
