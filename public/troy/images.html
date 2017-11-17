@@ -1,0 +1,31 @@
+<html>
+	<head>
+		Image Stuff
+	</head>
+	<body>
+		
+		<h1>Image Stuff</h1>
+		<img onclick= "onImageClick()"  src="picture.jpg" / > 
+		<img onclick= "onPictureClick()" src="image.jpg" / >
+		<button onclick="turnOn()">Turn On</button>
+		<button onclick="turnOff()">Turn Off</button>
+		<script src="/socket.io/socket.io.js">
+		</script>
+		<script>
+		  var socket = io();
+		  socket.on('news', function (data) {
+		    console.log(data);
+		    
+		  });
+		function onImageClick()
+		{
+			console.log("Ouch!!!");
+		}
+		function onPictureClick()
+		{
+			console.log("He ha");
+		}
+		</script>
+	</body>
+</html>
+
