@@ -4,13 +4,17 @@
 	</head>
 	<body>
 		<h1>The Steve</h1>
-
+		<div id="slidecontainer">
+			<input type="range" orient="vertical" min="1" max="10" value="50" class="slider" id="myRange" />
+		</div>
 		<button onclick="turnOn()">Turn On</button>
 		<button onclick="turnOff()">Turn Off</button>
 		<a href="images.html" >Image Page</a>
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
+			var slider = document.getElementById("myRange");
+			var value;
 		  var socket = io();
 		  socket.on('news', function (data) {
 		    console.log(data);
@@ -28,6 +32,14 @@
 		  	console.log("Turning off...");
 		  	socket.emit('msg', "0");
 		  }
+
+			value = slider.value;
+			slider.oninput = function()
+			{
+    		value = this.value;
+				console.log(value);
+			}
+
 		</script>
 	</body>
 </html>
