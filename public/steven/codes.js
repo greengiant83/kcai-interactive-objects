@@ -1,7 +1,8 @@
-var slider = document.getElementById("myRange");
-var value;
-var value2;
-var isOn = 0;
+var slider = document.getElementById("Color");
+var slider2 = document.getElementById("Brightness");
+var color = 1;
+var brightness = 0;
+
 var socket = io();
 socket.on('news', function (data) {
   console.log(data);
@@ -20,19 +21,20 @@ function turnOff()
   socket.emit('msg', "0");
 }
 
-value = slider.value;
-value2 = slider2.value;
+color = slider.value;
+brightness = slider2.value;
 slider.oninput = function()
 {
-  value = this.value;
-  console.log(value);
+  color = this.value;
+  console.log("Color: " + color);
 }
 slider2.oninput = function()
 {
-  value = this.value;
-  console.log(value);
+  brightness = this.value;
+  console.log("Brightness: "+brightness);
 }
+
 function buttonPressed()
 {
-  
+
 }
