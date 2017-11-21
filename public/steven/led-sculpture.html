@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta content='width=device-width, initial-scale=1' name='viewport'/>
+	</head>
+	<body>
+		<div id="slidecontainer">
+			<input type="range" min="1" max="10" value="50" class="slider" id="Brightness Range" />
+		</div>
+		<div id="slidecontainer2">
+			<input type="range" min="1" max="10" value="50" class="slider2" id="Color Range" />
+		</div>
+		<div id="Button">
+
+				<img src="Light-Icon.png" onclick="buttonPressed()"/>
+
+		</div>
+
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="codes.js"></script>
+	</body>
+</html>
