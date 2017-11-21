@@ -1,6 +1,7 @@
 var slider = document.getElementById("myRange");
 var value;
 var value2;
+var isOn = 0;
 var socket = io();
 socket.on('news', function (data) {
   console.log(data);
@@ -31,6 +32,7 @@ slider2.oninput = function()
   value = this.value;
   console.log(value);
 }
-function buttonPressed(){
-
+function buttonPressed()
+{
+  
 }
