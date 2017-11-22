@@ -1,33 +1,14 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta content='width=device-width, initial-scale=1' name='viewport'/>
 	</head>
 	<body>
-		<h1>The Steve</h1>
-
 		<button onclick="turnOn()">Turn On</button>
 		<button onclick="turnOff()">Turn Off</button>
 		<a href="images.html" >Image Page</a>
-
+		<a href="led-sculpture.html" >LED Sculpture</a>
 		<script src="/socket.io/socket.io.js"></script>
-		<script>
-		  var socket = io();
-		  socket.on('news', function (data) {
-		    console.log(data);
-
-		  });
-
-		  function turnOn()
-		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
-		  }
-
-		  function turnOff()
-		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
-		  }
-		</script>
+		<script src="codes.js"></script>
 	</body>
 </html>
