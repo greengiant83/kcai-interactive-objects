@@ -3,12 +3,11 @@
 		Image Stuff
 	</head>
 	<body>
-		<button onclick="PowerButton()">Turn On</button>
-		<button onclick="LeftChannel()">Turn Off</button>
-		<button onclick="RightChannel()">Turn On</button>
-		<button onclick="VolumeDown()">Turn Off</button>
-		<button onclick="VolumeUp()">Turn On</button>
-
+		<var> PowerButton </var>
+		<var> LeftChannel </var>
+		<var> RightChannel </var>
+		<var> VolumeDown </var>
+		<var> VolumeUp </var>
 		<img src="Remote.jpg" alt="" usemap="#Map" />
 			<map name="Map" id="Map">
 		    <area alt="" title="PowerButton" href="PowerButton" shape="poly" coords="65,53,45,61,36,82,43,99,66,107,86,98,93,79,83,61" />
@@ -25,12 +24,6 @@
 		    console.log(data);  
 		  });
 		</script>
-		<script>
-		  var socket = io();
-		  socket.on('news', function (data) {
-		    console.log(data);
-		    
-		  });
 		 function PowerButton()
 		  {
 		  	console.log("Power!!!!!");
