@@ -18,7 +18,7 @@ void loop()
     strip.clear();
     for(int i=0;i<count;i++)
     {
-      strip.setPixelColor(i, 0x0000ff);
+      strip.setPixelColor(i, strip.Color(170, 100, 0));
     }
     strip.show();
   }
