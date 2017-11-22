@@ -28,12 +28,15 @@ brightness = slider2.value;
 slider.oninput = function()
 {
   color = this.value;
+  color = color + "c";
   console.log("Color: " + color);
+  socket.emit('msg', color);
 }
 slider2.oninput = function()
 {
   brightness = this.value;
-  console.log("Brightness: "+brightness);
+  console.log("Brightness: " + brightness);
+  socket.emit('msg', brightness + "b");
 }
 
 function buttonPressed()
@@ -42,10 +45,12 @@ function buttonPressed()
   {
     buttonImage.src="Dark-Icon.png"
     isOn = false;
+    socket.emit('Switch',"off");
     console.log("color switched");
   }else if (!isOn)
   {
     buttonImage.src="Light-Icon.png"
     isOn = true;
+      socket.emit('Switch',"on");
   }
 }
