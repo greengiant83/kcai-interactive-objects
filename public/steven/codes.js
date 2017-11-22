@@ -1,5 +1,7 @@
 var slider = document.getElementById("Color");
 var slider2 = document.getElementById("Brightness");
+var buttonImage = document.getElementById("buttonImage");
+var isOn = true;
 var color = 1;
 var brightness = 0;
 
@@ -36,5 +38,14 @@ slider2.oninput = function()
 
 function buttonPressed()
 {
-
+  if(isOn)
+  {
+    buttonImage.src="Dark-Icon.png"
+    isOn = false;
+    console.log("color switched");
+  }else if (!isOn)
+  {
+    buttonImage.src="Light-Icon.png"
+    isOn = true;
+  }
 }
