@@ -2,9 +2,13 @@
 	<head>
 	</head>
 	<body>
+		
 		<h1>Troy is ia</h1>
-		<button onclick="turnOn()">Turn On</button>
-		<button onclick="turnOff()">Turn Off</button>
+		<button onclick="PowerButton()">Turn On</button>
+		<button onclick="LeftChannel()">Turn Off</button>
+		<button onclick="RightChannel()">Turn On</button>
+		<button onclick="VolumeDown()">Turn Off</button>
+		<button onclick="VolumeUp()">Turn On</button>
 		<a href ="images.html" >my images </a>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
@@ -14,17 +18,36 @@
 		    
 		  });
 
-		  function turnOn()
+		  function PowerButton()
 		  {
-		  	console.log("Turning on...");
-		  	socket.emit('msg', "10");
+		  	console.log("Power!");
+		  	socket.emit('msg', "1");
 		  }
 
-		  function turnOff()
+		  function LeftChannel()
 		  {
-		  	console.log("Turning off...");
-		  	socket.emit('msg', "0");
+		  	console.log("Surf Left");
+		  	socket.emit('msg', "2");
 		  }
+
+		  function RightChannel()
+		  {
+		  	console.log("Surf Right");
+		  	socket.emit('msg', "3");
+		  }
+
+		  function VolumeUp()
+		  {
+		  	console.log("Turn down the volume!");
+		  	socket.emit('msg', "4");
+		  }
+
+		  function VolumeDown()
+		  {
+		  	console.log("Turn up the volume!");
+		  	socket.emit('msg', "5");
+		  }
+
 		</script>
 	</body>
 </html>
