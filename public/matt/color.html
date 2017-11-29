@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script src="html5kellycolorpicker.min.js"></script>
+	</head>
+	<body>
+		<h1>Matt</h1>
+		<canvas id="picker"></canvas>
+		<input id="color" value="#54aedb">
+
+
+		<script>
+			new KellyColorPicker({
+				place : 'picker', 
+				input : 'color'
+			});
+
+			document.getElementById("color").addEventListener("change", function(e)
+			{
+				console.log("color", e);
+			})
+		</script>
+	</body>
+</html>
+
