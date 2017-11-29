@@ -11,12 +11,13 @@
       <a-entity position="0.39 -6.00 -6.8" rotation="270 45 0" material="color: #ffbe00; opacity:0.7" obj-model="obj: url(helix.obj)">
         <a-animation attribute="rotation"
                dur="1000"
-               fill="forwards"
-               to="270 225 0"
+               ease="none"
+               
+               to="270 405 0"
                repeat="indefinite"></a-animation>
       </a-entity>
       <!--<a-collada-model position="-0.15 1.5 0.5" rotation="0 45 0" material="color: red" src="helix.dae"></a-collada-model>-->
-
+      <a-plane position="0 -6 -4" rotation="-90 0 0" width="20" height="10" color="#4400aa"></a-plane>
       <a-sky color="#7700dd"></a-sky>
     </a-scene>
   </body>
