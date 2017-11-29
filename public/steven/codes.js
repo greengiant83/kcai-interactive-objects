@@ -45,12 +45,11 @@ function buttonPressed()
   {
     buttonImage.src="Dark-Icon.png"
     isOn = false;
-    socket.emit('Switch',"off");
-    console.log("color switched");
+    socket.emit('msg',"0p");
   }else if (!isOn)
   {
     buttonImage.src="Light-Icon.png"
     isOn = true;
-      socket.emit('Switch',"on");
+    socket.emit('msg',"1p");
   }
 }
