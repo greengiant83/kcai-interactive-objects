@@ -3,16 +3,25 @@
   <head>
     <title>Hello, WebVR! - A-Frame</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      socket.on('msg', function (data) {
+        console.log(data);
+        
+      });
+    </script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js">
+    </script>
   </head>
   <body>
     <a-scene>
       
-      <a-entity position="0.39 -6.00 -6.8" rotation="270 45 0" material="color: #ffbe00; opacity:0.7" obj-model="obj: url(helix.obj)">
+      <a-entity position="0.1 -1.00 -2.8" rotation="270 45 0" material="color: #ffbe00; opacity:0.7" obj-model="obj: url(helixWithNames.obj)">
         <a-animation attribute="rotation"
                dur="1000"
                ease="none"
-               
+               fill="forwards"
                to="270 405 0"
                repeat="indefinite"></a-animation>
       </a-entity>

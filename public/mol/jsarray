@@ -1,0 +1,11 @@
+js arrays????
+theres 25 nucleotide pairs
+
+var newLength = fruits.unshift('Strawberry') // add to the front
+// ["Strawberry", "Banana"];
+
+var last = fruits.pop(); // remove Orange (from the end)
+// ["Apple", "Banana"];
+
+var newNuc = Nucleotides.unshift(data);
+var byeNuc = Nucleotides.pop(Nucleotides[Nucleotides.length-1]);

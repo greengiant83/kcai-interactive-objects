@@ -17,8 +17,11 @@
 		    console.log(data);
 		    
 		  });
+		  var socket = io();
+		  socket.on('msg', function (data) {
+		    console.log(data);
 
-		  
+		  });
 		  
 		</script>
 	</body>
