@@ -35,7 +35,7 @@ a{
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #006eff;
+    background: #efedea;
     cursor: pointer;
 }
 .slider::-moz-range-thumb {

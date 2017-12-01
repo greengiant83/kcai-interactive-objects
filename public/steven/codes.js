@@ -51,7 +51,7 @@ slider.oninput = function()
       slider.className = "slider white";
       break;
     default:
-      slider.className = "slider";
+      slider.className = "slider white";
       break;
   }
   color = color + "c";
