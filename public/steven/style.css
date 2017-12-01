@@ -8,11 +8,11 @@ a{
 }
 #slidecontainer{
   position:fixed;
-  top:50%;
+  top:20%;
 }
 #slidecontainer2{
   position: fixed;
-  top:20%;
+  top:50%;
 }
 #Button{
   position:fixed;
@@ -71,4 +71,25 @@ a{
     border-radius: 50%;
     background: #006eff;
     cursor: pointer;
+}
+.red::-webkit-slider-thumb{
+  background: red;
+}
+.yellow::-webkit-slider-thumb{
+  background: yellow;
+}
+.green::-webkit-slider-thumb{
+  background: #00c119;
+}
+.cyan::-webkit-slider-thumb{
+  background: #00d4ff;
+}
+.blue::-webkit-slider-thumb{
+  background: #0050ff;
+}
+.purple::-webkit-slider-thumb{
+  background: #e100ff;
+}
+.white::-webkit-slider-thumb{
+  background: #efedea;
 }
