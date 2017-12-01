@@ -4,6 +4,9 @@
     <title>Hello, WebVR! - A-Frame</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="/socket.io/socket.io.js"></script>
+    
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+
     <script>
 
       var socket = io();
@@ -16,30 +19,99 @@
       for(i=0; i<25; i++){
         nucleotides.unshift("A");
       }
-      
-      function addNewItem(item){
-      
 
-      var newNuc = nucleotides.unshift(item);
-      var byeNuc = nucleotides.pop();
-      console.log("My list", nucleotides)
+      addNewItem("T");
       
+      function addNewItem(item)
+      {
+        var newNuc = nucleotides.unshift(item);
+        var byeNuc = nucleotides.pop();
+        console.log("My list", nucleotides)
+        var helix = document.getElementById("theHelix");
+        if(helix) helix.emit("code-updated");
       }
 
-    </script>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js">
+      //N1L
+      //N1C
+
+      AFRAME.registerComponent("helix-controller", {
+        init: function()
+        {
+          var self = this;
+          var nucleotidesItems = [];
+
+
+
+          var materials = {
+            A: new THREE.MeshStandardMaterial( { color: 0xff0000 } ),
+            T: new THREE.MeshStandardMaterial( { color: 0xffff00 } ),
+            C: new THREE.MeshStandardMaterial( { color: 0x00ff00 } ),
+            G: new THREE.MeshStandardMaterial( { color: 0x0000ff } ), 
+          }
+
+          var codingMaterials = {
+            A: materials["A"],
+            T: materials["T"],
+            C: materials["C"],
+            G: materials["G"],
+          }
+
+          var laggingMaterials = {
+            A: materials["T"],
+            T: materials["A"],
+            C: materials["G"],
+            G: materials["C"]
+          }
+
+          this.el.addEventListener("model-loaded", function()
+          {
+            console.log("model loaded");
+            updateColors();
+          });
+
+          this.el.addEventListener("code-updated", function()
+          {
+            updateColors();
+          });
+
+          function updateColors()
+          {
+            for(var i=0;i<nucleotides.length;i++)
+            {
+              var nucleotideCode = nucleotides[i];
+              var nucleotideCodingMesh = findObjectByName(self.el.object3D, "N" + (i+1) + "C");
+              var nucleotideLaggingMesh = findObjectByName(self.el.object3D, "N" + (i+1) + "L");
+              nucleotideCodingMesh.material = codingMaterials[nucleotideCode];
+              nucleotideLaggingMesh.material = laggingMaterials[nucleotideCode];
+            }
+          }
+        }
+      });
+
+      
+
+      function findObjectByName(item, name)
+      {
+        if(item.name == name) return item;
+
+        for(var i=0;i<item.children.length;i++)
+        {
+          var childResult = findObjectByName(item.children[i], name);
+          if(childResult) return childResult;
+        }
+      }
+
     </script>
   </head>
   <body>
     <a-scene>
-      
-      <a-entity position="0.1 -1.00 -2.8" rotation="270 45 0" material="color: #ffbe00; opacity:0.7" obj-model="obj: url(helixWithNames.obj)">
-        <a-animation attribute="rotation"
+      <a-entity id="theHelix" helix-controller position="0.1 -1.00 -2.8" rotation="270 45 0" material="color: #ffbe00; opacity:0.7" obj-model="obj: url(helixWithNames.obj)">
+        <!--<a-animation attribute="rotation"
                dur="1000"
                ease="none"
                fill="forwards"
                to="270 405 0"
-               repeat="indefinite"></a-animation>
+               repeat="indefinite"></a-animation>-->
       </a-entity>
       <!--<a-collada-model position="-0.15 1.5 0.5" rotation="0 45 0" material="color: red" src="helix.dae"></a-collada-model>-->
       <a-plane position="0 -6 -4" rotation="-90 0 0" width="20" height="10" color="#4400aa"></a-plane>
