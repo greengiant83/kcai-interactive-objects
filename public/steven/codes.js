@@ -8,7 +8,6 @@ var brightness = 0;
 var socket = io();
 socket.on('news', function (data) {
   console.log(data);
-
 });
 
 function turnOn()
@@ -28,8 +27,34 @@ brightness = slider2.value;
 slider.oninput = function()
 {
   color = this.value;
+  switch (this.value)
+  {
+    case "1":
+      slider.className = "slider red";
+      break;
+    case "2":
+      slider.className = "slider yellow";
+      break;
+    case "3":
+      slider.className = "slider green";
+      break;
+    case "4":
+      slider.className = "slider cyan";
+      break;
+    case "5":
+      slider.className = "slider blue";
+      break;
+    case "6":
+      slider.className = "slider purple";
+      break;
+    case "7":
+      slider.className = "slider white";
+      break;
+    default:
+      slider.className = "slider";
+      break;
+  }
   color = color + "c";
-  console.log("Color: " + color);
   socket.emit('msg', color);
 }
 slider2.oninput = function()

@@ -1,11 +1,16 @@
+int brightness = 0;
+int red = 0;
+int green = 0;
+int blue = 0;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   String msg = "56&255&12&34"; //assume brightess, red, green, blue
-  int brightness = getValue(msg, '&', 0).toInt();
-  int red = getValue(msg, '&', 1).toInt();
-  int green = getValue(msg, '&', 2).toInt();
-  int blue = getValue(msg, '&', 3).toInt();
+  brightness = getValue(msg, '&', 0).toInt();
+  red = getValue(msg, '&', 1).toInt();
+  green = getValue(msg, '&', 2).toInt();
+  blue = getValue(msg, '&', 3).toInt();
   
   Serial.print("brightness: ");
   Serial.println(brightness);
@@ -21,9 +26,14 @@ void setup() {
   
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
+void loop() 
+{
+  if(Serial.available() > 0)
+  {
+    String command = Serial.readStringUntil('\n');  
+    Serial.print("I heard this: ");
+    Serial.println(command);
+  }
 }
 
 // https://stackoverflow.com/questions/9072320/split-string-into-string-array
