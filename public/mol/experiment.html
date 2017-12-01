@@ -5,11 +5,27 @@
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="/socket.io/socket.io.js"></script>
     <script>
+
       var socket = io();
       socket.on('msg', function (data) {
         console.log(data);
-        
+        addNewItem(data);
       });
+
+      var nucleotides = [];
+      for(i=0; i<25; i++){
+        nucleotides.unshift("A");
+      }
+      
+      function addNewItem(item){
+      
+
+      var newNuc = nucleotides.unshift(item);
+      var byeNuc = nucleotides.pop();
+      console.log("My list", nucleotides)
+      
+      }
+
     </script>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js">
     </script>
