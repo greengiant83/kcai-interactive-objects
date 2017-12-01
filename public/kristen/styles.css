@@ -1,27 +1,30 @@
 #slidecontainer {
     position: fixed;
     width: 136%;
-    top: 15%
+    top: 15%;
+    left: 10%;
 }
 
 #picker{
   position: fixed;
   top: 30%;
+  left: 25%;
 }
 
 #color{
   position: fixed;
-  top: 75%
+  top: 75%;
+  left: 25%;
 }
 
 body {
-    background-color: #eae6ef;
+    background-color: ##ffffff;
 }
 /* The slider itself */
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 70%; /* Full-width */
+    width: 60%; /* Full-width */
     height: 15%; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
@@ -39,12 +42,12 @@ body {
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #c5a0d8; /* Green background */
+    background: #7c7b7b; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #c5a0d8; /* Green background */
+    background: #7c7b7b; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
