@@ -2,28 +2,44 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<meta content='width=device-width, initial-scale=1' name='viewport'/>
+		<script src="html5kellycolorpicker.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
 	</head>
 	<body>
 
 		<div id="slidecontainer">
-  	<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  	<input type="range" min="0" max="100" value="50" class="slider" id="myRange">
 		</div>
 
-<img src="colorwheel.png"/>
-<div class="preview"></div>
-<div class="colorpicker" style="display:none">
-	<canvas id="picker" var="1" width="300" height="300"></canvas>
-
-	<div class="controls">
-			<div><label>R</label> <input type="text" id="rVal" /></div>
-			<div><label>G</label> <input type="text" id="gVal" /></div>
-			<div><label>B</label> <input type="text" id="bVal" /></div>
-			<div><label>RGB</label> <input type="text" id="rgbVal" /></div>
-			<div><label>HEX</label> <input type="text" id="hexVal" /></div>
-		</div>
-</div>
-
-		<script src="script.js"></script>
+		<canvas id="picker"></canvas>
+		<input id="color" value="#54aedb">
+		<script>
+	var socket = io();
+	var slider = document.getElementById("myRange");
+	var currentColor = {r: 0, g: 0, b: 0};
+	new KellyColorPicker({
+		place : 'picker',
+		input : 'color',
+		userEvents: {
+			change: function(e)
+			{
+				currentColor = e.getCurColorRgb();
+				console.log("the color is now ", currentColor);
+				sendColor();
+			}
+		}
+	});
+		// Update the current slider value (each time you drag the slider handle)
+		slider.oninput = function() {
+			console.log(this.value);
+			sendColor();
+		}
+		function sendColor()
+		{
+			var msg = slider.value + "&" + currentColor.r + "&" + currentColor.g + "&" + currentColor.b;
+			console.log("sending color info", msg);
+			socket.emit("msg", msg);
+		}
+		</script>
   </body>
 </html>
-   // :)
